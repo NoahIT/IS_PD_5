@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "+XgV/NOebyA=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\rasci\\Desktop\\PasswordManagerApplication\\PasswordManagerApplication\\PasswordManagerApplication.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\rasci\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\8.0.2\\microsoft.windowsdesktop.app.ref.8.0.2.nupkg.sha512",
+    "C:\\Users\\rasci\\.nuget\\packages\\microsoft.netcore.app.ref\\8.0.2\\microsoft.netcore.app.ref.8.0.2.nupkg.sha512",
+    "C:\\Users\\rasci\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\8.0.2\\microsoft.aspnetcore.app.ref.8.0.2.nupkg.sha512",
+    "C:\\Users\\rasci\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\8.0.2\\microsoft.netcore.app.host.win-x64.8.0.2.nupkg.sha512"
+  ],
+  "logs": []
+}

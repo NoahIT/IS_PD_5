@@ -1,0 +1,56 @@
+﻿<Window x:Class="PasswordManagerApplication.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PasswordManagerApplication"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="300" Width="600">
+
+
+    <Grid>
+        <TabControl x:Name="MainTabControl">
+            <TabItem Header="Login">
+                <StackPanel>
+                    <TextBox Name="UsernameBox" />
+                    <PasswordBox Name="PasswordBox" />
+                    <Button Content="Login" Click="LoginButton_Click"/>
+                    <Button Content="Register" Click="RegisterButton_Click"/>
+                </StackPanel>
+            </TabItem>
+            <TabItem Header="Manage Passwords" x:Name="ManagePasswordsTab" IsEnabled="False">
+                <StackPanel>
+                    <TextBox Name="SearchTitleBox" />
+                    <Button Content="Search" Click="SearchButton_Click"/>
+
+                    <DataGrid Name="PasswordGrid" AutoGenerateColumns="False">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Title" Binding="{Binding Title}" Width="*"/>
+                            <DataGridTextColumn Header="Encrypted Password" Binding="{Binding EncryptedPassword}" Width="*"/>
+                            <DataGridTextColumn Header="URL/Application" Binding="{Binding Url}" Width="*"/>
+                            <DataGridTextColumn Header="Comment" Binding="{Binding Comment}" Width="*"/>
+                            <DataGridTemplateColumn Header="Decrypted Password" Width="*">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBox Text="{Binding DecryptedPassword, Mode=OneWay}" Width="200" IsReadOnly="True"/>
+                                            <Button Content="Show" Click="ShowPasswordButton_Click" Tag="{Binding EncryptedPassword}" DataContext="{Binding}"/>
+                                            <Button Content="Copy" Click="CopyPasswordButton_Click" DataContext="{Binding}"/>
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                        </DataGrid.Columns>
+                    </DataGrid>
+
+                    <TextBox Name="NewPasswordBox" Text="enter your new password here..."/>
+                    <Button Content="Load All Passwords" Click="LoadAllPasswordsButton_Click"/>
+                    <Button Content="Add New Password" Click="AddPasswordButton_Click"/>
+                    <Button Content="Update Password" Click="UpdatePasswordButton_Click"/>
+                    <Button Content="Delete Password" Click="DeletePasswordButton_Click"/>
+                    <Button Content="Generate Random Password" Click="GenerateRandomPasswordButton_Click"/>
+                </StackPanel>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>
