@@ -5,20 +5,35 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PasswordManagerApplication"
         mc:Ignorable="d"
-        Title="MainWindow" Height="300" Width="600">
+        Title="MainWindow" Height="600" Width="800">
 
 
     <Grid>
-        <TabControl x:Name="MainTabControl">
-            <TabItem Header="Login">
+        <TabControl x:Name="MainTabControl" Background="black">
+            <TabItem Header="Login" Width="200">
                 <StackPanel>
-                    <TextBox Name="UsernameBox" />
-                    <PasswordBox Name="PasswordBox" />
-                    <Button Content="Login" Click="LoginButton_Click"/>
-                    <Button Content="Register" Click="RegisterButton_Click"/>
+                    <Label Foreground="White" FontSize="20" 
+                           Margin="5" VerticalAlignment="Center" 
+                           HorizontalAlignment="Center">Enter your credentials or register</Label>
+
+                    <Label Foreground="White" FontSize="15" Width="328">Username</Label>
+                    <TextBox Name="UsernameBox" Width="328" Height="25" FontSize="15"/>
+
+                    <Label Foreground="White" FontSize="15" Width="328">Password</Label>
+                    <PasswordBox Name="PasswordBox" Width="328" Height="25" FontSize="15"/>
+                    
+                    <Button Content="Login" Click="LoginButton_Click"
+                            Background="Black" Foreground="White"
+                            FontSize="15" Margin="10" Width="328" 
+                            BorderBrush="lime" BorderThickness="2"/>
+                    <Button Content="Register" Click="RegisterButton_Click"
+                            Background="Black" Foreground="White"
+                            FontSize="15" Margin="10" Width="328" 
+                            BorderBrush="CornflowerBlue" BorderThickness="2"/>
                 </StackPanel>
             </TabItem>
-            <TabItem Header="Manage Passwords" x:Name="ManagePasswordsTab" IsEnabled="False">
+            <TabItem Header="Manage Passwords" x:Name="ManagePasswordsTab" 
+                     IsEnabled="False" Width="200">
                 <StackPanel>
                     <TextBox Name="SearchTitleBox" />
                     <Button Content="Search" Click="SearchButton_Click"/>
